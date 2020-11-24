@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B2gC3/g2LSbFrlkp+XAvHJlibNQLr05ri+x90ESKgGBk230gJhGiy0CuFTZB7aq2Bb28nvs9rXhoQffS1H7bYA==",
+  "dgSpecHash": "0b+NhSdU5DtkjRdCMnFL548o4Q+6m7jYSjcmpjkljODgrdn3/F16ZoE5FEmm4otphbsVUPk+BL2BcbWzdMboVg==",
   "success": true,
-  "projectFilePath": "F:\\Dev Skill Full Stack ASP.NET Core MVC Trainning\\Aspnet-core-Practise\\Web Practise\\FirstWebApp\\FirstWebApp.csproj",
+  "projectFilePath": "F:\\Dev Skill Full Stack ASP.NET Core MVC Trainning\\Aspnet-coremvc-Practise-CRUD-ADO.NET\\Web Practise\\FirstWebApp\\FirstWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\subroto\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\subroto\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

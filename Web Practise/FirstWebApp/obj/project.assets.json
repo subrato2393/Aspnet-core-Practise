@@ -459,11 +459,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Dev Skill Full Stack ASP.NET Core MVC Trainning\\Aspnet-core-Practise\\Web Practise\\FirstWebApp\\FirstWebApp.csproj",
+      "projectUniqueName": "F:\\Dev Skill Full Stack ASP.NET Core MVC Trainning\\Aspnet-coremvc-Practise-CRUD-ADO.NET\\Web Practise\\FirstWebApp\\FirstWebApp.csproj",
       "projectName": "FirstWebApp",
-      "projectPath": "F:\\Dev Skill Full Stack ASP.NET Core MVC Trainning\\Aspnet-core-Practise\\Web Practise\\FirstWebApp\\FirstWebApp.csproj",
+      "projectPath": "F:\\Dev Skill Full Stack ASP.NET Core MVC Trainning\\Aspnet-coremvc-Practise-CRUD-ADO.NET\\Web Practise\\FirstWebApp\\FirstWebApp.csproj",
       "packagesPath": "C:\\Users\\subroto\\.nuget\\packages\\",
-      "outputPath": "F:\\Dev Skill Full Stack ASP.NET Core MVC Trainning\\Aspnet-core-Practise\\Web Practise\\FirstWebApp\\obj\\",
+      "outputPath": "F:\\Dev Skill Full Stack ASP.NET Core MVC Trainning\\Aspnet-coremvc-Practise-CRUD-ADO.NET\\Web Practise\\FirstWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\subroto\\AppData\\Roaming\\NuGet\\NuGet.Config",

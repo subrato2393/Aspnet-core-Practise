@@ -48,11 +48,7 @@ namespace FirstWebApp.Controllers
         public List<Department> GetDepartment()
         
         {
-            //return new List<string>()
-            //{
-            //  // {"CSE"},{"EEE"},{"ECE"}
-            //    "CSE","EEE","ECE"
-            //};
+           
             string connectionString = "Server=DESKTOP-HD3BUG1;Database=UniversityDb;User Id=sa;Password=Bina;";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             string query = "Select * from Department";
