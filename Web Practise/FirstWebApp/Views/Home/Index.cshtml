@@ -1,0 +1,38 @@
+﻿@model List<FirstWebApp.Models.Student>
+@{
+    ViewData["Title"] = "Home Page";
+   // List<Student> students = (List<Student>)ViewBag.students;
+}
+@*<h1>@ViewBag.Student.Name</h1>
+    <h1>@ViewBag.Student.Address</h1>
+    <h1>@ViewBag.Student.Email</h1>*@
+
+@*@{
+    var students = ViewBag.students;
+    foreach (var item in students)
+    {
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>@item.Address</td>
+                <td>@item.Email</td>
+            </tr>
+        </table>
+    }
+}*@
+<table class="table table-bordered table-striped">
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.Address</td>
+        <td>@item.Email</td>
+    </tr>
+}
+</table>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
