@@ -18,7 +18,7 @@ namespace COREMVCCrudAppADO.NET.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Add(Student student)
+        public IActionResult Add(Student student)
         {
             string connectionString = "Server=DESKTOP-HD3BUG1;Database=UniversityDb;User Id=sa;Password=Bina;";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -77,9 +77,33 @@ namespace COREMVCCrudAppADO.NET.Controllers
             ViewBag.Departments = GetDepartment();
             return RedirectToAction("GetAll");
         }
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return View();
+            var student = GetStudent(id);
+            return View(student);
+        }
+        [HttpPost]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            string connectionString = "Server=DESKTOP-HD3BUG1;Database=UniversityDb;User Id=sa;Password=Bina;";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            string query = "Delete from Student where id="+id+"";
+            SqlCommand command = new SqlCommand(query, sqlConnection);
+
+            sqlConnection.Open();
+            int rowCount = command.ExecuteNonQuery();
+            sqlConnection.Close();
+            string message;
+            if (rowCount > 0)
+            {
+                message = "Delete successfully";
+            }
+            else
+            {
+                message = "Delete Failed";
+            }
+            ViewBag.Message = message;
+            return RedirectToAction("GetAll");
         }
         public Student GetStudent(int id)
         {

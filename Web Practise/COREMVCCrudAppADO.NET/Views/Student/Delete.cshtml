@@ -1,5 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model COREMVCCrudAppADO.NET.Models.Student
+<h1>Delete Record</h1>
+<br />
+<p>Are You Sure You want to delete This record</p>
+
+@using (Html.BeginForm("DeleteConfirmed", "Student", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+    <div>
+        <dl>
+            <dt>@Html.DisplayNameFor(x => x.Name)</dt>
+            <dd>@Html.DisplayFor(x => x.Name)</dd>
+
+            <dt>@Html.DisplayNameFor(x => x.Address)</dt>
+            <dd>@Html.DisplayFor(x => x.Address)</dd>
+
+            <dt>@Html.DisplayNameFor(x => x.DepartmentName)</dt>
+            <dd>@Html.DisplayFor(x => x.DepartmentName)</dd>
+
+            <dt>@Html.DisplayNameFor(x => x.Email)</dt>
+            <dd>@Html.DisplayFor(x => x.Email)</dd>
+        </dl>
+        <input type="submit" value="Delete" class="btn btn-success" />
+    </div>
 }
+

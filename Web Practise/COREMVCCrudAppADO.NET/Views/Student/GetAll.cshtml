@@ -6,7 +6,7 @@
            <th>Address</th>
            <th>Email</th>
            <th>Department Name</th>
-           <th colspan="2">Action</th>
+           <th colspan="3">Action</th>
        </tr>
     </thead>
     @foreach (var item in Model)
@@ -17,7 +17,8 @@
     <td>@item.Address</td>
     <td>@item.Email</td>
     <td>@item.DepartmentName</td>
-    <td>@Html.ActionLink("Edit", "Update", "Student",new {id=item.Id },new{@class="btn btn-success"})</td>
+    <td>@Html.ActionLink("Add", "Add", "Student","",new { @class = "btn btn-success" })</td>
+    <td>@Html.ActionLink("Edit", "Update", "Student", new { id = item.Id }, new { @class = "btn btn-success" })</td>
     <td>@Html.ActionLink("Delete", "Delete", "Student", new { id = item.Id }, new { @class = "btn btn-success" })</td>
 </tr>
     }
