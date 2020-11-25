@@ -11,28 +11,22 @@ namespace COREMVCCrudAppADO.NET.Controllers
 {
     public class StudentController : Controller
     {
+        public string connectionString ="Server=DESKTOP-HD3BUG1;Database=UniversityDb;User Id=sa;Password=Bina;";
         public IActionResult Add()
         {
-            ViewBag.Departments = GetDepartment();
-           
+            ViewBag.Departments = GetDepartment();         
             return View();
         }
         [HttpPost]
         public IActionResult Add(Student student)
         {
-            string connectionString = "Server=DESKTOP-HD3BUG1;Database=UniversityDb;User Id=sa;Password=Bina;";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
             string query = "Insert into Student (Name,Email,Address,DepartmentId) Values('" + student.Name + "','" + student.Email + "','" + student.Address + "','" + student.DepartmentId + "')";
-            SqlCommand command = new SqlCommand(query, sqlConnection);
-
-            sqlConnection.Open();
-            int rowCount = command.ExecuteNonQuery();
-            sqlConnection.Close();
+            bool IsExecute= new DatabaseHelper(connectionString).Execute(query);
             string message;
-            if (rowCount > 0)
+            if (IsExecute)
             {
                 message = "Save successfully";
-            }
+            }        
             else
             {
                 message = "Save Failed";
@@ -45,7 +39,6 @@ namespace COREMVCCrudAppADO.NET.Controllers
         public IActionResult GetAll()
         {
             var model = GetAllStudent();
-           
             return View(model);
         } 
         public IActionResult Update(int id)
@@ -57,18 +50,12 @@ namespace COREMVCCrudAppADO.NET.Controllers
         [HttpPost]
         public IActionResult Update(Student student)
         {
-            string connectionString = "Server=DESKTOP-HD3BUG1;Database=UniversityDb;User Id=sa;Password=Bina;";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
             string query ="Update student set Name='"+student.Name+"',Address='"+student.Address+"',Email='"+student.Email+"',DepartmentId='"+student.DepartmentId+"' where Id="+student.Id+"";
-            SqlCommand command = new SqlCommand(query, sqlConnection);
-
-            sqlConnection.Open();
-            int rowCount = command.ExecuteNonQuery();
-            sqlConnection.Close();
+            bool IsExecute = new DatabaseHelper(connectionString).Execute(query);
             string message;
-            if (rowCount > 0)
+            if (IsExecute)
             {
-                message = "Update successfully";
+                message="Update successfully";
             }
             else
             {
@@ -85,16 +72,10 @@ namespace COREMVCCrudAppADO.NET.Controllers
         [HttpPost]
         public IActionResult DeleteConfirmed(int id)
         {
-            string connectionString = "Server=DESKTOP-HD3BUG1;Database=UniversityDb;User Id=sa;Password=Bina;";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
             string query = "Delete from Student where id="+id+"";
-            SqlCommand command = new SqlCommand(query, sqlConnection);
-
-            sqlConnection.Open();
-            int rowCount = command.ExecuteNonQuery();
-            sqlConnection.Close();
             string message;
-            if (rowCount > 0)
+            bool IsExecute = new DatabaseHelper(connectionString).Execute(query);
+            if (IsExecute)
             {
                 message = "Delete successfully";
             }
